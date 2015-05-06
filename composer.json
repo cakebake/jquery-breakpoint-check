@@ -1,12 +1,23 @@
 {
-  "name": "cakebake/jquery-breakpoint-check",
-  "description": "Check the current visibility of bootstrap 3 breakpoints",
-  "minimum-stability": "dev",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Jens A. (cakebake)",
-      "email": "cakebake.dev@gmail.com"
+    "name": "cakebake/jquery-breakpoint-check",
+    "description": "Check the current visibility of bootstrap 3 breakpoints",
+    "keywords": [
+        "breakpoint",
+        "bootstrap",
+        "responsive",
+        "jquery",
+        "javascript"
+    ],
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jens A. (cakebake)",
+            "email": "cakebake.dev@gmail.com"
+        }
+    ],
+    "suggest": {
+        "components/jquery": ">=1.8",
+        "twbs/bootstrap": "~3.0.0"
     }
-  ]
 }
