@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Bootstrap 3 Breakpoint Check</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>jQuery bootstrap 3 breakpoint check</h1>
+
+        <p class="lead">Simple demo which illustrates which breakpoint is currently active.</p>
+    </div>
+    <div class="row example">
+        <div class="col-xs-3 example-xs"><div class="well">Current bootstrap breakpoint: "xs"</div></div>
+        <div class="col-xs-3 example-sm"><div class="well">Current bootstrap breakpoint: "sm"</div></div>
+        <div class="col-xs-3 example-md"><div class="well">Current bootstrap breakpoint: "md"</div></div>
+        <div class="col-xs-3 example-lg"><div class="well">Current bootstrap breakpoint: "lg"</div></div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/jquery-breakpoint-check.min.js"></script>
+<script>
+    $(window).resize(function () {
+        var successClass = "text-success text-uppercase";
+        $(".example .well").removeClass(successClass).removeAttr('style');
+        if ($.isXs()) {
+            $(".example-xs .well").addClass(successClass).css('border-color', 'green');
+        } else if ($.isSm()) {
+            $(".example-sm .well").addClass(successClass).css('border-color', 'green');
+        } else if ($.isMd()) {
+            $(".example-md .well").addClass(successClass).css('border-color', 'green');
+        } else if ($.isLg()) {
+            $(".example-lg .well").addClass(successClass).css('border-color', 'green');
+        }
+    }).resize();
+</script>
+</body>
+</html>
