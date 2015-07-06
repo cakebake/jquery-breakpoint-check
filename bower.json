@@ -8,6 +8,9 @@
     "breakpoints",
     "check"
   ],
+  "authors": [
+    "Jens A. (cakebake) <cakebake.dev@gmail.com>"
+  ],
   "homepage": "https://github.com/cakebake/jquery-breakpoint-check",
   "license": "MIT",
   "moduleType": "globals",
