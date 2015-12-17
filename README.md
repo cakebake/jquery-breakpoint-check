@@ -1,4 +1,5 @@
-# jQuery Bootstrap 3 Breakpoint Check
+jQuery Bootstrap 3 Breakpoint Check
+===================================
 
 Check the current visibility of bootstrap 3 breakpoints.
 
@@ -6,39 +7,42 @@ Check the current visibility of bootstrap 3 breakpoints.
 
 The plugin I have created for simple reasons:
 
-- I needed something that works and is easy to integrate into existing projects (in my daily work)
-- I did not want to create a new code in each project. A plugin repository is mostly stable
-- Bootstrap did not provide its own Javascript API for this
-- I had fun doing it^^
+-	I needed something that works and is easy to integrate into existing projects (in my daily work)
+-	I did not want to create a new code in each project. A plugin repository is mostly stable
+-	Bootstrap did not provide its own Javascript API for this
+-	I had fun doing it^^
 
-## Installation
+Installation
+------------
 
 You can download the plugin manually or install by composer. ... and the plugin requires jQuery. ;) jQuery must be properly integrated into the page.
 
 ### Install via Composer (recommended for php projects)
 
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install the package using the following command:
 
-    php composer.phar require --prefer-dist cakebake/jquery-breakpoint-check "*"
+```
+php composer.phar require --prefer-dist cakebake/jquery-breakpoint-check "*"
+```
 
 or add
 
-    "cakebake/jquery-breakpoint-check": "*"
+```
+"cakebake/jquery-breakpoint-check": "*"
+```
 
-to the require section of your ```composer.json``` file and run ```php composer.phar update```.
+to the require section of your `composer.json` file and run `php composer.phar update`.
 
 ### Manual Installation
 
 #### Download:
 
-- [Current Master Branch](https://github.com/cakebake/jquery-breakpoint-check/archive/master.zip)
-- [Latest releases](https://github.com/cakebake/jquery-breakpoint-check/releases)
+-	[Current Master Branch](https://github.com/cakebake/jquery-breakpoint-check/archive/master.zip)
+-	[Latest releases](https://github.com/cakebake/jquery-breakpoint-check/releases)
 
-Include one of the two javascript files from the folder ```js``` after jQuery include. For productive projects, you can use the ```jquery-breakpoint-check.min.js``` version.
-For more details see file ```test.html```.
+Include one of the two javascript files from the folder `js` after jQuery include. For productive projects, you can use the `jquery-breakpoint-check.min.js` version. For more details see file `test.html`.
 
 Example:
 
@@ -46,9 +50,10 @@ Example:
 <script src="js/jquery-breakpoint-check.min.js"></script>
 ```
 
-## Usage
+Usage
+-----
 
-Is the current screen resolution ```xs``` breakpoint?
+Is the current screen resolution `xs` breakpoint?
 
 ```js
 if ($.isXs()) {
@@ -56,7 +61,7 @@ if ($.isXs()) {
 }
 ```
 
-Is the current screen resolution ```sm``` breakpoint?
+Is the current screen resolution `sm` breakpoint?
 
 ```js
 if ($.isSm()) {
@@ -64,7 +69,7 @@ if ($.isSm()) {
 }
 ```
 
-Is the current screen resolution ```md``` breakpoint?
+Is the current screen resolution `md` breakpoint?
 
 ```js
 if ($.isMd()) {
@@ -72,11 +77,30 @@ if ($.isMd()) {
 }
 ```
 
-Is the current screen resolution ```lg``` breakpoint?
+Is the current screen resolution `lg` breakpoint?
 
 ```js
 if ($.isLg()) {
     alert('Is lg breakpoint :)');
+}
+```
+
+Is the current screen resolution `custom` breakpoint?
+
+Create a CSS-Class with visibility for your custom breakpoint. For example:
+
+```
+.visible-grid-float-breakpoint {
+    @media (min-width: @grid-float-breakpoint-max) {
+        display: none;
+        visibility: hidden;
+    }
+}
+```
+
+```js
+if ($.isBreakpoint('grid-float-breakpoint')) {
+    alert('It is my custom breakpoint :)');
 }
 ```
 
@@ -96,7 +120,7 @@ $(window).resize(function () {
 }).resize();
 ```
 
-Hide a div on ```xs``` and ```lg``` breakpoint.
+Hide a div on `xs` and `lg` breakpoint.
 
 ```js
 $(window).resize(function () {
@@ -109,7 +133,8 @@ $(window).resize(function () {
 }).resize();
 ```
 
-## Copyright and License
+Copyright and License
+---------------------
 
 Copyright (C) Jens A. (cakebake)
 
